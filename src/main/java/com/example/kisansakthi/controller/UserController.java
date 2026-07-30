@@ -4,6 +4,7 @@ import com.example.kisansakthi.model.User;
 import com.example.kisansakthi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -17,8 +18,13 @@ public class UserController {
 
     // Register User
     @PostMapping("/register")
-    public User registerUser(@RequestBody User user) {
-        return userService.registerUser(user);
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
+        try {
+            User registeredUser = userService.registerUser(user);
+            return ResponseEntity.ok(registeredUser);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Registration failed: Email or Phone number might already be in use.");
+        }
     }
 
     // Get All Users
