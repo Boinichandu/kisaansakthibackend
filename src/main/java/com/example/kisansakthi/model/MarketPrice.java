@@ -22,18 +22,21 @@ public class MarketPrice {
 
     private String unit;
 
+    private String district;
+
     @Column(name = "last_updated")
     private LocalDateTime lastUpdated;
 
     public MarketPrice() {
     }
 
-    public MarketPrice(Integer id, String cropName, String marketName,
+    public MarketPrice(Integer id, String cropName, String marketName, String district,
             Double pricePerQuintal, String unit,
             LocalDateTime lastUpdated) {
         this.id = id;
         this.cropName = cropName;
         this.marketName = marketName;
+        this.district = district;
         this.pricePerQuintal = pricePerQuintal;
         this.unit = unit;
         this.lastUpdated = lastUpdated;
@@ -85,5 +88,13 @@ public class MarketPrice {
 
     public void setLastUpdated(LocalDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 }

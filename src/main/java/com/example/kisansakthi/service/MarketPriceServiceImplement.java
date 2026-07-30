@@ -40,6 +40,7 @@ public class MarketPriceServiceImplement implements MarketPriceService {
 
         existingMarketPrice.setCropName(marketPrice.getCropName());
         existingMarketPrice.setMarketName(marketPrice.getMarketName());
+        existingMarketPrice.setDistrict(marketPrice.getDistrict());
         existingMarketPrice.setPricePerQuintal(marketPrice.getPricePerQuintal());
         existingMarketPrice.setUnit(marketPrice.getUnit());
 

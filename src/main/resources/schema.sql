@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS market_price (
     id SERIAL PRIMARY KEY,
     crop_name VARCHAR(255) NOT NULL,
     market_name VARCHAR(255) NOT NULL,
+    district VARCHAR(255),
     price_per_quintal DOUBLE PRECISION NOT NULL,
     unit VARCHAR(255) NOT NULL,
     last_updated TIMESTAMP
